@@ -24,12 +24,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ParthDesai091/wedding-organizer.git"
+    "url": "https://github.com/VikashRajpurohit/Front.git"
   },
   "author": "Parth",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ParthDesai091/wedding-organizer.git"
+    "url": "https://github.com/VikashRajpurohit/Front.git"
   },
   "eslintConfig": {
     "extends": [
