@@ -6,7 +6,7 @@ const Login = () => {
   const [ username, setName ] = useState("")
 	const [	password, setpass ] = useState("")
 
-  
+  let err= "";  
 	async function postName(e) {
 		e.preventDefault()
 		try {
@@ -14,8 +14,13 @@ const Login = () => {
 				username,password
       } )
 		} catch (error) {
+      err=error;
 			console.error(error)
+      console.log(error.response.data);
 		}
+    if (err.match("")){
+      console.log("rund");
+    }
 	}
 
 
@@ -43,8 +48,6 @@ const Login = () => {
             </div>
           </form>
         </div>
-        
-        
         <a className="close" href="#"></a>
       </div>
       </center>
