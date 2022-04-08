@@ -1,4 +1,19 @@
 
+#SignupContent {
+    max-width: 600px;
+    backgroud-color: white;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 600px) {
+    #SignupContent {
+            height: 100%;
+    }
+#materialToolbar {
+        padding: 10px;
+}
+}
+
 body{
 	padding:0;
 	margin:0;
@@ -6,6 +21,7 @@ body{
 	position:relative;
 	font-family: 'Inconsolata', monospace;
 }
+
 body a{
     transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -392,7 +408,7 @@ li > a:only-child:after { content: ''; }
 /*-- popup --*/
 .popup-effect {
     position: relative;
-    background: rgba(160, 155, 231, 0.7);
+    background: rgba(195, 192, 236, 0.7);
     opacity: 1;
     margin: 2em auto;
     padding: 3em 2em;
