@@ -37,8 +37,43 @@ const Registration = () => {
   function callopt(){
   axios.defaults.withCredentials=true;
     const res = axios.post("http://localhost:5000/api/otp", {username});
+
+    var x = document.getElementById("otpfeild");
+    var z = document.getElementById("sotpbutton");
+    var a = document.getElementById("resendotp");
+    // eslint-disable-next-line
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    }else{
+      x.style.display = "none";
+    } 
+
+    if (z.style.display === "none") {
+      z.style.display = "block";
+    }else{
+      z.style.display = "none";
+    } 
+    if (a.style.display === "none") {
+      a.style.display = "block";
+    }else{
+      a.style.display = "none";
+    } 
+  
     console.log(res);
   }
+
+  function callopt2(){
+    axios.defaults.withCredentials=true;
+    axios.post("http://localhost:5000/api/otp", {username});
+  }
+
+  
+  function jsc() {
+   
+   
+  }
+
+
 
   return (  
 
@@ -60,11 +95,11 @@ const Registration = () => {
         </div>
         <div className="form-group">
           <div className="form-row form-row-1">
-          <input type="date" name="dob" id="dob" className="input-text"  
+          <input type="date" name="dob" id="dob" className="input-text" max={2005}
                value={d_o_b} onChange={(e) => setd_o_b(e.target.value)} required />
           </div>
           <div className="form-row form-row-2">
-          <input type="phone" name="phone" className="phone" id="phone" placeholder="Contact.no" 
+          <input type="phone" name="phone" className="phone" id="phone" pattern="^[6789][0-9]{9}$" placeholder="Contact.no" 
                           value={contact} onChange={(e) => setcontact(e.target.value)} required />
         </div>
         
@@ -86,7 +121,8 @@ const Registration = () => {
                           value={address_pincode} onChange={(e) => setaddressp(e.target.value)} required />
                           </div>
         
-        <div className="form-row">
+                          <div className="form-group">
+          <div className="form-row form-row-1">
           <select name="State">
             <option value="State">State</option>
             <option value="Gujrat">Gujrat</option>
@@ -95,10 +131,10 @@ const Registration = () => {
           </select>
           <span className="select-btn">
             <i className="zmdi zmdi-chevron-down" />
-          </span>
-        </div>
+          </span>               
+          </div>
 
-        <div className="form-row">
+          <div className="form-row form-row-2">
           <select name="City">
             <option value="City">City</option>
             <option value="Surat">Surat</option>
@@ -109,22 +145,31 @@ const Registration = () => {
             <i className="zmdi zmdi-chevron-down" />
           </span>
         </div>
+      </div>
+       
 
       </div>
       <div className="form-right">
         <h2>Authentication Details</h2>
         <div className="form-row form-row-1"  >
-          <input type="email" name="username"  className="username" id="username" placeholder="Username" 
+          <input type="email" name="username"  className="username" id="username" pattern="^[a-z\.0-9]{6,30}@.+\..+$" placeholder="Username" 
                           value={username} onChange={(e) => setusername(e.target.value)} required 
           />
           <div className="form-row-last" style={{padding:"unset",margin:"unset",marginLeft:"78%"}}>
-          <input type="button" name="otp" onClick={callopt}className="register" defaultValue="send otp" style={{padding:"unset",margin:"6px 0 0 0 ", width:"100px"}} />
+          
+          <input type="button" name="otp" onClick={callopt}className="register"
+          id="sotpbutton" defaultValue="send otp" style={{padding:"unset",margin:"6px 0 0 0 ", width:"100px"}} />
           </div>
           
-          
-          <input type="text" name="otp"  className="otp" id="otp" placeholder="OTP" 
+          <input type="text" name="otp"  className="otp" style={{ display: "none" }} id="otpfeild" placeholder="OTP" 
                           value={otp} onChange={(e) => setotp(e.target.value)} required 
           />
+          
+          <div className="form-row-last" style={{padding:"unset",margin:"unset",marginLeft:"78%"}}>
+            <input type="button" name="otp" onClick={callopt2}className="register"
+            id="resendotp" defaultValue="Resend otp" style={{display: "none",padding:"unset",margin:"6px 0 0 0 ", width:"100px"}} />
+          </div>
+          
           
         </div>
         <div className="form-row">
@@ -143,7 +188,7 @@ const Registration = () => {
           </label>
         </div>
         <div className="form-row-last">
-          <input type="submit" name="register" className="register" defaultValue="Register Badge" />
+          <input type="submit" name="register" style={{width:"250px",margin:"15px 0px 50px 90px"}} className="register" defaultValue="Register Badge" />
         </div>
       </div>
     </form>
