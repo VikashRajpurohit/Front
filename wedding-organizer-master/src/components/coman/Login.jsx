@@ -1,5 +1,7 @@
 import axios from "axios"
 import React, { useState } from "react"
+import swal from "sweetalert";
+import Swalfire from "sweetalert2";
 
 const Login = () => {
 
@@ -10,9 +12,24 @@ const Login = () => {
 	async function postName(e) {
 		e.preventDefault()
 		try {
-			await axios.post("http://localhost:5000/api/auth", {
+			const res = await axios.post("http://localhost:5000/api/auth", {
 				username,password
       } )
+      if(res.status===210){
+        Swalfire.fire({
+          title: "Successful",
+          icon: "success",
+          html: res.status,
+        });}
+        
+          Swalfire.fire({
+            title: "Somthing Wrong!",
+            icon: "error",
+            html: "Password do not match.",
+          });
+              
+        
+      
 		} catch (error) {
       err=error;
 			console.error(error)
