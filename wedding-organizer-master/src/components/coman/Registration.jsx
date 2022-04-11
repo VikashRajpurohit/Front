@@ -1,7 +1,7 @@
 import axios from "axios"
 import React, { useState } from "react"
-
-
+import swal from "sweetalert";
+import Swalfire from "sweetalert2";
 const Registration = () => {
   axios.defaults.withCredentials=true;
   
@@ -12,19 +12,37 @@ const Registration = () => {
   const [ address_street, setaddresss ] = useState("")
   const [ address_landmark, setaddressl ] = useState("")
   const [ address_pincode, setaddressp ] = useState("")
+  const [ address_city, setaddressc ] = useState("")
+  const [ address_state, setaddresst ] = useState("")
   const [ password, setpassword ] = useState("")
+  const [ cpassword, setcpassword ] = useState("")
   const [ username, setusername ] = useState("")
   const [ otp, setotp ] = useState("")
-
 
 	
   let err= "";  
 	async function postName(e) {
+    axios.defaults.withCredentials=true;
 		e.preventDefault()
 		try {
-			await axios.post("http://localhost:5000/api/users", {
-				otp,fname,lname,contact,address_street,address_landmark,address_pincode,d_o_b,password,username} )
-		} catch (error) {
+      if(password.match(cpassword)||cpassword.match(password)){
+        
+        const res2 = await axios.post("http://localhost:5000/api/users", {
+				otp,fname,lname,contact,address_street,address_landmark,address_pincode,address_city,address_state,d_o_b,password,username} )
+       
+        if(res2.status === 210);{
+          window.location.href = "/login";
+        }
+      
+    
+      }else{
+        Swalfire.fire({
+          title: "Somthing Wrong!",
+          icon: "error",
+          html: "Password do not match.",
+        });
+              }
+        } catch (error) {
       err=error;
 			console.error(error)
       console.log(error.response.data);
@@ -35,8 +53,10 @@ const Registration = () => {
 	}
 
   function callopt(){
+
   axios.defaults.withCredentials=true;
-    const res = axios.post("http://localhost:5000/api/otp", {username});
+    
+  const res = axios.post("http://localhost:5000/api/otp", {username});
 
     var x = document.getElementById("otpfeild");
     var z = document.getElementById("sotpbutton");
@@ -63,13 +83,34 @@ const Registration = () => {
   }
 
   function callopt2(){
+
     axios.defaults.withCredentials=true;
+    
     axios.post("http://localhost:5000/api/otp", {username});
   }
 
   
-  function jsc() {
+ 
+  	async function getadata(e) {
+      e.preventDefault()
+      try {  
    
+    const res = await axios.post("http://localhost:5000/api/users/pincode", {address_pincode});
+    
+    var x = document.getElementById("state");
+    var z = document.getElementById("city");
+   
+    x.value=res.data.state
+    z.value=res.data.city
+        setaddresst(res.data.state);
+        setaddressc(res.data.city)
+    
+   
+    console.log("abc");
+    console.log();
+      }catch(err){
+        
+      }
    
   }
 
@@ -123,27 +164,13 @@ const Registration = () => {
         
                           <div className="form-group">
           <div className="form-row form-row-1">
-          <select name="State">
-            <option value="State">State</option>
-            <option value="Gujrat">Gujrat</option>
-            <option value="Punjab">Punjab</option>
-            <option value="UP">UP</option>
-          </select>
-          <span className="select-btn">
-            <i className="zmdi zmdi-chevron-down" />
-          </span>               
+          <input type="text"  name="State" id="state" onClick={getadata}/>
+         
           </div>
 
           <div className="form-row form-row-2">
-          <select name="City">
-            <option value="City">City</option>
-            <option value="Surat">Surat</option>
-            <option value="Bardoli">Bardoli</option>
-            <option value="Vapi">Vapi</option>
-          </select>
-          <span className="select-btn">
-            <i className="zmdi zmdi-chevron-down" />
-          </span>
+          <input type="text"  name="city" id="city" onClick={getadata}/>
+         
         </div>
       </div>
        
@@ -166,14 +193,15 @@ const Registration = () => {
           />
           
           <div className="form-row-last" style={{padding:"unset",margin:"unset",marginLeft:"78%"}}>
-            <input type="button" name="otp" onClick={callopt2}className="register"
+            <input type="button" name="otp" onClick={callopt2} className="register"
             id="resendotp" defaultValue="Resend otp" style={{display: "none",padding:"unset",margin:"6px 0 0 0 ", width:"100px"}} />
           </div>
           
           
         </div>
         <div className="form-row">
-          <input type="password" name="password" id="password" className="input-text" required  placeholder="Password" />
+          <input type="password" name="password" id="password" className="input-text"
+          value={cpassword} onChange={(e) => setcpassword(e.target.value)} required  placeholder="Password" />
         </div>
         <div className="form-row">
           <input type="password" name="password" id="password" className="input-text" placeholder="Conform Password" 
