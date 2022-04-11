@@ -23,8 +23,8 @@ const routes = [
         icon: <FaUserPlus />,
       },
       {
-        path: "/ShowService",
-        name: "ShowService",
+        path: "/ShowService_Detils",
+        name: "ShowService_Detils",
         icon: <FaDatabase />,
       },
     ],

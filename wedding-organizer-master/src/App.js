@@ -19,12 +19,12 @@ import Footer from "./components/coman/Footer";
 import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Services from "./components/coman/Services";
+import ShowService_Detils from "./pages/Organizer/ShowService_Detils";
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      
+     <Navbar />
         <Switch>
         <Route exact path="/" component={Landing} />
           <Route exact path="/about" component={Aboutus} />
@@ -33,8 +33,7 @@ const App = () => {
           <Route exact path="/services" component={Services} />
         </Switch>
       <Footer />
-    </>
-      /* <AdminBar class="sidebar">
+     <AdminBar class="sidebar">
         <Switch>
           <Route path="/AdminDesk" component={AdminDesk } />
           <Route path="/Addservice" component={AddService } />
@@ -49,12 +48,11 @@ const App = () => {
             <Route path="/OrganizerDesk" component={OrganizerDesk } />
             <Route path="/AddService_Detils" component={AddService_Detils } />
             <Route path="/ShowService" component={ShowService } />
-            <Route path="/ShowClient" component={ShowUser } />
-            <Route path="/AddService_Detils" component={AddService_Detils } />                 
+            <Route path="/ShowClient" component={ShowUser } /> 
+            <Route path="/ShowService_Detils" component={ShowService_Detils } />  
           </Switch>
         </OrganizerBar>
-
-    </>  */
+    </>
   );
 }
 
