@@ -5,7 +5,7 @@ const Registration = () => {
     <>
 <div className="page-content">
   <div className="form-v10-content">
-    <form className="form-detail" action="#" method="post" id="Registration">
+    <form className="form-detail" action="#" method="post" id="myform">
       <div className="form-left">
         <h2>General Infomation</h2>
         <div className="form-group">
