@@ -30,8 +30,8 @@ const AddService  =  ()  =>  {
   });
 
   return (
-    <div className='demos'> 
-    <div id="login-popup" className="popup-effect" style={{display:"grid",placeItems:"center",margin:"2em auto",padding:"3em 2em",zIndex:"999",backgroundColor:"white"}}>
+    <div className='demos' style={{display:"grid",placeItems:"center",marginLeft:"25em auto",padding:"3em 2em",zIndex:"999",backgroundColor:"white"}}> 
+    <div id="login-popup" className="popup-effect" style={{display:"grid",placeItems:"center",zIndex:"999",backgroundColor:"white"}}>
       <center>
         <div className="popup" >
         <h4 className="modal-title text-uppercase">Add Service</h4>

@@ -3,6 +3,8 @@ import React, { useState } from "react"
 import swal from "sweetalert";
 import Swalfire from "sweetalert2";
 const Registration = () => {
+
+  
   axios.defaults.withCredentials=true;
   
   const [ fname, setfname ] = useState("")
