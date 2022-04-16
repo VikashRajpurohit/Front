@@ -6,7 +6,7 @@ const Registration = () => {
 
   
   axios.defaults.withCredentials=true;
-  
+  const [ role, setrole ] = useState("") 
   const [ fname, setfname ] = useState("")
   const [ lname, setlname ] = useState("")
   const [ contact, setcontact ] = useState("")
@@ -30,7 +30,7 @@ const Registration = () => {
       if(password.match(cpassword)||cpassword.match(password)){
         
         const res2 = await axios.post("http://localhost:5000/api/users", {
-				otp,fname,lname,contact,address_street,address_landmark,address_pincode,address_city,address_state,d_o_b,password,username} )
+				role,otp,fname,lname,contact,address_street,address_landmark,address_pincode,address_city,address_state,d_o_b,password,username} )
        
         if(res2.status === 210);{
           window.location.href = "/login";
@@ -131,6 +131,7 @@ const Registration = () => {
             <input type="text" name="first_name" id="first_name" className="input-text" placeholder="First Name" 
                           value={fname} onChange={(e) => setfname(e.target.value)} required />
           </div>
+          <input type="hidden" id="role" name="role" value="O" v onChange={(e) => setrole(e.target.value)}></input>
           <div className="form-row form-row-2">
             <input type="text" name="last_name" id="last_name" className="input-text" placeholder="Last Name" 
               value={lname} onChange={(e) => setlname(e.target.value)} required />

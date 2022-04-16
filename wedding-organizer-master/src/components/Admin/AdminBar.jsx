@@ -1,41 +1,40 @@
-import react from "react";
-import { NavLink } from "react-router-dom";
-import { FaBars, FaHome,FaUser,FaUserPlus,FaDatabase,FaSignOutAlt} from "react-icons/fa";
-import { BiSearch } from "react-icons/bi";
+import { NavLink, Outlet } from "react-router-dom";
+import { FaBars, FaHome,FaUser,FaUserPlus,FaDatabase,FaSignOutAlt } from "react-icons/fa";
 import { AiTwotoneFileExclamation } from "react-icons/ai";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
+
 const routes = [
   {
-    path: "/OrganizerDesk",
-    name: "OrganizerDesk",
+    path: "/AdminDesk",
+    name: "AdminDesk",
     icon: <FaHome />,
   },
   {
-    path: "/Service",
+    path: "Service",
     name: "Service",
     icon: <AiTwotoneFileExclamation />,
     subRoutes: [
       {
-        path: "/AddService_Detils",
-        name: "AddService_Detils ",
+        path: "AddService",
+        name: "AddService ",
         icon: <FaUserPlus />,
       },
       {
-        path: "/ShowService_Detils",
-        name: "ShowService_Detils",
+        path: "ShowService",
+        name: "ShowService",
         icon: <FaDatabase />,
       },
     ],
   },
   {
-    path: "/ShowClient",
-    name: "ShowClient",
+    path: "ShowUser",
+    name: "ShowUser",
     icon: <FaUser />,
   },
   {
-    path: "/Logout",
+    path: "Logout",
     name: "Logout",
     icon: <FaSignOutAlt />,
   },
@@ -103,7 +102,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  OrganizerDesk
+                  AdminDesk
                 </motion.h1>
               )}
             </AnimatePresence>
@@ -124,6 +123,7 @@ const SideBar = ({ children }) => {
                   />
                 );
               }
+
               return (
                 <NavLink
                   to={route.path}
@@ -151,8 +151,9 @@ const SideBar = ({ children }) => {
           </section>
         </motion.div>
 
-        <main>{children}</main>
+        <main>{children}<Outlet/></main>
       </div>
+      
     </>
   );
 };

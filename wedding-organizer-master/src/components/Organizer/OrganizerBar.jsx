@@ -1,57 +1,58 @@
-import { NavLink } from "react-router-dom";
-import { FaBars, FaHome,FaUser,FaUserPlus,FaDatabase,FaSignOutAlt } from "react-icons/fa";
+import react from "react";
+import { NavLink, Outlet } from "react-router-dom";
+import { FaBars, FaHome,FaUser,FaUserPlus,FaDatabase,FaSignOutAlt} from "react-icons/fa";
+import { BiSearch } from "react-icons/bi";
 import { AiTwotoneFileExclamation } from "react-icons/ai";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
-
 const routes = [
   {
-    path: "/AdminDesk",
-    name: "AdminDesk",
+    path: "/OrganizerDesk",
+    name: "OrganizerDesk",
     icon: <FaHome />,
   },
   {
-    path: "/Service",
-    name: "Service",
-    icon: <AiTwotoneFileExclamation />,
-    subRoutes: [
-      {
-        path: "/AddService",
-        name: "AddService ",
-        icon: <FaUserPlus />,
-      },
-      {
-        path: "/ShowService",
-        name: "ShowService",
-        icon: <FaDatabase />,
-      },
-    ],
-  },
-  {
-    path: "/Service_Cat",
+    path: "Service_Cat",
     name: "Service_Type",
     icon: <AiTwotoneFileExclamation />,
     subRoutes: [
       {
-        path: "/AddService_Cat",
+        path: "AddService_Cat",
         name: "Add_Type",
         icon: <FaUserPlus />,
       },
       {
-        path: "/Show_Cat",
+        path: "Show_Cat",
         name: "Show_Cat",
         icon: <FaDatabase />,
       },
     ],
   },
   {
-    path: "/ShowUser",
-    name: "ShowUser",
+    path: "Service",
+    name: "Service",
+    icon: <AiTwotoneFileExclamation />,
+    subRoutes: [
+      {
+        path: "AddService_Detils",
+        name: "AddService_Detils ",
+        icon: <FaUserPlus />,
+      },
+      {
+        path: "ShowService_Detils",
+        name: "ShowService_Detils",
+        icon: <FaDatabase />,
+      },
+    ],
+  },
+  {
+    path: "ShowClient",
+    name: "ShowClient",
     icon: <FaUser />,
   },
   {
-    path: "/Logout",
+    path: "Logout",
     name: "Logout",
     icon: <FaSignOutAlt />,
   },
@@ -119,7 +120,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  AdminDesk
+                  OrganizerDesk
                 </motion.h1>
               )}
             </AnimatePresence>
@@ -140,7 +141,6 @@ const SideBar = ({ children }) => {
                   />
                 );
               }
-
               return (
                 <NavLink
                   to={route.path}
@@ -168,7 +168,7 @@ const SideBar = ({ children }) => {
           </section>
         </motion.div>
 
-        <main>{children}</main>
+        <main>{children}<Outlet/></main>
       </div>
     </>
   );

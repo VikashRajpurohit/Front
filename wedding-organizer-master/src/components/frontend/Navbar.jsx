@@ -28,13 +28,13 @@ function handleClick(event) {
   <div className="container">
     <section className="row top_header pt-3">
       <div className="col-lg-6 buttons ml-auto">
-        <p><span className="fa fa-phone" /> +12 8976 2334</p>
+        <p><span className="fa fa-phone" /> +91 7874418758</p>
         <Link className="btn btn-info btn-lg-block w3ls-btn px-sm-4 px-3 text-capitalize mr-sm-2" to="/login">Login</Link>
         <div className="btn btn-info btn-lg-block w3ls-btn px-sm-4 px-3 text-capitalize mr-sm-2"> <Popup  trigger={<div className='"btn btn-info btn-lg-block w3ls-btn px-sm-4 px-3 text-capitalize mr-sm-2"'> Registration</div>} position="right down">
         <div>
         <ul className="menu mt-2">
-        <li className="mr-lg-3 mr-2"><Link to="/registration" state={'u'}>User</Link></li>
-        <li className="mr-lg-3 mr-2"><Link to="/registration" params={{ role: "o" }}>Organizer</Link></li>
+        <li className="mr-lg-3 mr-2"><Link to="/Registration_client">User</Link></li>
+        <li className="mr-lg-3 mr-2"><Link to="/Registration">Organizer</Link></li>
         </ul>            
         </div>
         </Popup>
@@ -54,8 +54,8 @@ function handleClick(event) {
         <li className="mr-lg-3 mr-2 active"><Link to="/">Home</Link></li>
         <li className="mr-lg-3 mr-2"><Link to="/about">About Us</Link></li>
         <li className="mr-lg-3 mr-2"><Link to="/Services">Services</Link></li>
-        <li className="mr-lg-3 mr-2"><Link to="/gallery">Gallery</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+        <li className="mr-lg-3 mr-2"><Link to="/Gallery">Gallery</Link></li>
+        <li><Link to="/Contact">Contact Us</Link></li>
       </ul>
     </nav>
   </div>

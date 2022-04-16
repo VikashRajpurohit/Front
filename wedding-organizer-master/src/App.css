@@ -22,7 +22,7 @@ main {
 .sidebar {
   background: rgb(0, 7, 61);
   color: white;
-  height: 100vh;
+  height:750px;
   overflow-y: auto;
 }
 

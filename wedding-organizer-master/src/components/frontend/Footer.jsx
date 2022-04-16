@@ -8,10 +8,10 @@ const Footer = () => {
         <div className="col-lg-4 col-sm-6">
           <h3 className="text-capitalize mb-3">Address</h3>
           <address className="mb-0">
-            <p className><span className="fa fa-map-marker" /> 2466H 5th Street Parking, King <br />Block, New York City.</p>
+            <p className><span className="fa fa-map-marker" /> 2466H 5th floor jalaram , <br /> Adajan, Surat City..</p>
             <p><span className="fa fa-clock-o" /> Timings : 10 a.m to 6 p.m</p>
-            <p><span className="fa fa-phone" /> +12 8976 2334</p>
-            <p><span className="fa fa-envelope-open" /> <a href="mailto:info@example.com">info@example.com</a></p>
+            <p><span className="fa fa-phone" /> +91 7874418758</p>
+            <p><span className="fa fa-envelope-open" /> <a href="mailto:weddingorganizer@gmail.com">weddingorganizer@gmail.com</a></p>
           </address>
         </div>
         <div className="col-lg-4 col-sm-6 mt-lg-0 mt-sm-0 mt-4 p-md-0">

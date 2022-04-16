@@ -1,57 +1,67 @@
 import "./App.css";
 import react,{Fragment} from "react";
-import AdminBar from "./components/Sidebar/AdminBar";
-import OrganizerBar from "./components/Sidebar/OrganizerBar";
-import AdminDesk from "./pages/Admin/AdminDesk";
-import OrganizerDesk from"./pages/Organizer/OrganizerDesk";
-import AddService from"./pages/Admin/AddService";
-import AddService_Cat from"./pages/Admin/AddService_Cat";
-import AddService_Detils from"./pages/Organizer/AddService_Detils";
-import ShowService from"./pages/Admin/ShowService";
-import ShowUser from"./pages/Admin/ShowUser";
-import Show_Cat from"./pages/Admin/Show_Cat";
-import Login from "./components/coman/Login";
-import Registration from "./components/coman/Registration";
-import Navbar from "./components/coman/Navbar";
-import Aboutus from "./components/coman/Aboutus";
-import Landing from "./components/coman/Landing";
-import Footer from "./components/coman/Footer";
-import { Switch } from "react-router-dom";
-import { Route } from "react-router-dom";
-import Services from "./components/coman/Services";
-import ShowService_Detils from "./pages/Organizer/ShowService_Detils";
+import {Routes,Route} from 'react-router-dom';
+
+import Frontend from "./components/frontend/frontend";
+import Landing from "./components/frontend/Landing";
+import Login from "./components/frontend/Login";
+import Aboutus from "./components/frontend/Aboutus";
+import Registration from "./components/frontend/Registration";
+import Services from "./components/frontend/Services";
+import Error from "./components/frontend/Error";
+
+import AdminDesk from "./components/Admin/AdminDesk";
+import AddService from "./components/Admin/AddService";
+import ShowService from "./components/Admin/ShowService";
+import ShowUser from "./components/Admin/ShowUser";
+
+import OrganizerDesk from "./components/Organizer/OrganizerDesk";
+import Show_Cat from "./components/Organizer/Show_Cat";
+import AddService_Cat from "./components/Organizer/AddService_Cat";
+import ShowClient from "./components/Organizer/ShowClient";
+import Registration_client from "./components/frontend/Registration_client";
+import AddService_Detils from "./components/Organizer/AddService_Detils";
+import ShowService_Detils from "./components/Organizer/ShowService_Detils";
+import Gallery from "./components/frontend/Gallery";
+import Contact from "./components/frontend/Contact";
 
 const App = () => {
   return (
     <>
-     <Navbar />
-        <Switch>
-        <Route exact path="/" component={Landing} />
-          <Route exact path="/about" component={Aboutus} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/registration" component={Registration} />
-          <Route exact path="/services" component={Services} />
-        </Switch>
-      <Footer />
-     <AdminBar class="sidebar">
-        <Switch>
-          <Route path="/AdminDesk" component={AdminDesk } />
-          <Route path="/Addservice" component={AddService } />
-          <Route path="/AddService_Cat" component={AddService_Cat } />
-          <Route path="/ShowService" component={ShowService } />
-          <Route path="/ShowUser" component={ShowUser } />
-          <Route path="/Show_Cat" component={Show_Cat } />
-        </Switch>
-      </AdminBar>  
-      <OrganizerBar class="sidebar">
-          <Switch> 
-            <Route path="/OrganizerDesk" component={OrganizerDesk } />
-            <Route path="/AddService_Detils" component={AddService_Detils } />
-            <Route path="/ShowService" component={ShowService } />
-            <Route path="/ShowClient" component={ShowUser } /> 
-            <Route path="/ShowService_Detils" component={ShowService_Detils } />  
-          </Switch>
-        </OrganizerBar>
+    <div className="App">
+      
+       <Routes>
+          <Route path="/" element={<Frontend />}>
+                  <Route index element={<Landing />} />
+                  <Route path="Login" element={< Login />} />
+                  <Route path="About" element={< Aboutus />} />
+                  <Route path="Registration" element={< Registration />} />
+                  <Route path="Registration_client" element={< Registration_client />} />
+                  <Route path="Services" element={< Services /> } />
+                  <Route path="Error" element={< Error /> } />
+                  <Route path="Gallery" element={<Gallery />}/>
+                  <Route path="Contact" element={<Contact />}/>
+                  
+
+          </Route>
+
+          <Route path="/AdminDesk" element={<AdminDesk />}>
+                <Route path="Addservice" element={<AddService />} />
+                <Route path="ShowService" element={<ShowService />} />
+                <Route path="ShowUser" element={<ShowUser />} />
+          </Route>
+
+          <Route path="/OrganizerDesk" element={<OrganizerDesk />}>
+                <Route path="AddService_Cat" element={<AddService_Cat />} />
+                <Route path="Show_Cat" element={<Show_Cat />} />
+                <Route path="AddService_Detils" element={<AddService_Detils />} />
+                <Route path="ShowService_Detils" element={<ShowService_Detils />} />
+                <Route path="ShowClient" element={<ShowClient />} />
+          </Route>
+          <Route path="*" element={<Error />} />
+      </Routes> 
+
+    </div>
     </>
   );
 }
