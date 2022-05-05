@@ -34,7 +34,7 @@ const routes = [
     icon: <FaUser />,
   },
   {
-    path: "Logout",
+    path: "/AdminDesk/Alogout",
     name: "Logout",
     icon: <FaSignOutAlt />,
   },

@@ -11,6 +11,8 @@ const AddService  =  ()  =>  {
 
 
   const [servicecategories,setsc]=useState("");
+  const [description,setdes]=useState("");
+  
   let searchable,perperson;
   let err="";
 
@@ -20,7 +22,7 @@ const AddService  =  ()  =>  {
       if(checkboxRef1.current.checked){perperson="1"}else{perperson="0"}
       if(checkboxRef2.current.checked){searchable="1"}else{searchable="0"}
         const res2 = await axios.post("http://localhost:5000/api/serv_mst", {
-          servicecategories,perperson,searchable});
+          servicecategories,description,perperson,searchable});
         if(res2){
           Swalfire.fire({
             icon: "success",
@@ -85,6 +87,13 @@ const AddService  =  ()  =>  {
               <label htmlFor="recipient-name" className="col-form-label">Service Name</label>
               <input type="text" className="form-control" placeholder name="Service-Name" id="Service-name" 
                value={servicecategories} onChange={(e) => setsc(e.target.value)}
+               required  />
+               {formik.touched.Name && formik.errors.Name ? <span style={{color:'red'}}>{formik.errors.Name}</span> : null}
+            </div>
+            <div className="form-group">
+              <label htmlFor="recipient-name" className="col-form-label">Description</label>
+              <input type="text" className="form-control" placeholder name="Service-de" id="Service-des" 
+               value={description} onChange={(e) => setdes(e.target.value)}
                required  />
                {formik.touched.Name && formik.errors.Name ? <span style={{color:'red'}}>{formik.errors.Name}</span> : null}
             </div>

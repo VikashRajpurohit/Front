@@ -6,7 +6,7 @@ const Registration = () => {
 
   
   axios.defaults.withCredentials=true;
-  const [ role, setrole ] = useState("") 
+  const  role = "O";
   const [ fname, setfname ] = useState("")
   const [ lname, setlname ] = useState("")
   const [ contact, setcontact ] = useState("")
@@ -131,8 +131,7 @@ const Registration = () => {
             <input type="text" name="first_name" id="first_name" className="input-text" placeholder="First Name" 
                           value={fname} onChange={(e) => setfname(e.target.value)} required />
           </div>
-          <input type="hidden" id="role" name="role" value="O" v onChange={(e) => setrole(e.target.value)}></input>
-          <div className="form-row form-row-2">
+           <div className="form-row form-row-2">
             <input type="text" name="last_name" id="last_name" className="input-text" placeholder="Last Name" 
               value={lname} onChange={(e) => setlname(e.target.value)} required />
           </div>

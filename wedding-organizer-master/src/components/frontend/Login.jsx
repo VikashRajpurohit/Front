@@ -4,32 +4,31 @@ import swal from "sweetalert";
 import Swalfire from "sweetalert2";
 
 const Login = () => {
-  
 
   const [ username, setName ] = useState("")
 	const [	password, setpass ] = useState("")
 
   let err= "";  
 	async function postName(e) {
+    
+  axios.defaults.withCredentials=true;
 		e.preventDefault()
 		try {
 			const res = await axios.post("http://localhost:5000/api/auth", {
 				username,password
       } )
-      if(res.status===210){
-        Swalfire.fire({
-          title: "Successful",
-          icon: "success",
-          html: res.status,
-        });}
-        
+      if(res.status===210 && res.data.r === "O"){
+        window.location.href = "/OrganizerDesk"; 
+      }           
+      if(res.status===210 && res.data.r === "A"){
+        window.location.href = "/AdminDesk"; 
+      } 
+      if(res.status===210 && res.data.r === "C"){
           Swalfire.fire({
-            title: "Somthing Wrong!",
-            icon: "error",
-            html: "Password do not match.",
+            icon: "Success",
+            html:  "Customer Module is in Progress.",
           });
-              
-        
+      }
       
 		} catch (error) {
       err=error;

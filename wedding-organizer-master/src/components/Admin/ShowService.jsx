@@ -7,17 +7,17 @@ function ShowService() {
 
   const fetchData = () => {
     axios.get("http://localhost:5000/api/serv_mst").then((response) => {
-      
+
       setUser(response.data);
       
     });}
      
     useEffect(() => {
-    fetchData();
+      fetchData();
     });
 
   return (	
-  <section className="ftco-section">
+<section className="ftco-section">
 <div className="container">
   <div className="row">
     <div className="col-md-12">

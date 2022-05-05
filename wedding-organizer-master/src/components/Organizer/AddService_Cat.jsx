@@ -3,6 +3,7 @@ import {useFormik} from 'formik';
 import Swalfire from "sweetalert2";
 import axios from "axios"
 
+
 const AddService_Cat = () => {
 
   let err="";
@@ -31,8 +32,8 @@ const AddService_Cat = () => {
         });
         if(res1){
           Swalfire.fire({
-            icon: "success",
-            html: res1 + "abcd",
+            icon: "Success",
+            html:  "Added Successfully",
           });
       }else{
         Swalfire.fire({

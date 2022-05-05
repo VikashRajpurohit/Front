@@ -1,7 +1,7 @@
 import "./App.css";
 import react,{Fragment} from "react";
 import {Routes,Route} from 'react-router-dom';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Frontend from "./components/frontend/frontend";
 import Landing from "./components/frontend/Landing";
 import Login from "./components/frontend/Login";
@@ -22,8 +22,13 @@ import ShowClient from "./components/Organizer/ShowClient";
 import Registration_client from "./components/frontend/Registration_client";
 import AddService_Detils from "./components/Organizer/AddService_Detils";
 import ShowService_Detils from "./components/Organizer/ShowService_Detils";
+
 import Gallery from "./components/frontend/Gallery";
 import Contact from "./components/frontend/Contact";
+import Logout from "./components/frontend/Logout";
+import Alogout from "./components/Admin/Alogout";
+import Ologout from "./components/Organizer/Ologout";
+import PackageCreation from "./components/Organizer/PackageCreation";
 
 const App = () => {
   return (
@@ -41,6 +46,7 @@ const App = () => {
                   <Route path="Error" element={< Error /> } />
                   <Route path="Gallery" element={<Gallery />}/>
                   <Route path="Contact" element={<Contact />}/>
+               
                   
 
           </Route>
@@ -49,20 +55,25 @@ const App = () => {
                 <Route path="Addservice" element={<AddService />} />
                 <Route path="ShowService" element={<ShowService />} />
                 <Route path="ShowUser" element={<ShowUser />} />
+                <Route path="Alogout" element={<Alogout />}/>
           </Route>
 
           <Route path="/OrganizerDesk" element={<OrganizerDesk />}>
+                
                 <Route path="AddService_Cat" element={<AddService_Cat />} />
                 <Route path="Show_Cat" element={<Show_Cat />} />
+                <Route path="PackageCreation" element={<PackageCreation />} />
                 <Route path="AddService_Detils" element={<AddService_Detils />} />
                 <Route path="ShowService_Detils" element={<ShowService_Detils />} />
                 <Route path="ShowClient" element={<ShowClient />} />
+                <Route path="Ologout" element={<Ologout />}/>
           </Route>
           <Route path="*" element={<Error />} />
       </Routes> 
 
     </div>
-    </>
+    
+   </>
   );
 }
 

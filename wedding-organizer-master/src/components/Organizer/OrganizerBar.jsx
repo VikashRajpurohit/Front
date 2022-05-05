@@ -50,9 +50,17 @@ const routes = [
     path: "ShowClient",
     name: "ShowClient",
     icon: <FaUser />,
+    subRoutes: [
+      {
+        path: "PackageCreation",
+        name: "PackageCreation ",
+        icon: <FaUserPlus />,
+      },
+     
+    ],
   },
   {
-    path: "Logout",
+    path: "Ologout",
     name: "Logout",
     icon: <FaSignOutAlt />,
   },

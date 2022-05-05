@@ -24,13 +24,18 @@ const AddService_Detils = () => {
 
   async function getallist(e) {
   	e.preventDefault()
+    
+    axios.defaults.withCredentials=true;
     res2 = await axios.get("http://localhost:5000/api/serv_mst");
      
         setUser(res2.data);
         sets_mid(smid);
+       
 		try {}catch(error){}}
 
   async function getallist2(e) {
+    
+    axios.defaults.withCredentials=true;
     e.preventDefault()
     console.log(stid)
      res1 = await axios.post("http://localhost:5000/api/serv_type/getss",
@@ -39,6 +44,8 @@ const AddService_Detils = () => {
       try {}catch(error){}}
   
       async function postName(e) {
+        
+    axios.defaults.withCredentials=true;
         e.preventDefault()
         const formData = new FormData();
         formData.append('stid', stid);
@@ -52,10 +59,10 @@ const AddService_Detils = () => {
         
         try {
              res3 = await axios.post("http://localhost:5000/api/service",formData);
-            if(res3){
+             if(res3){
               Swalfire.fire({
-                icon: "success",
-                html:  "abcd",
+                icon: "Success",
+                html:  "Added Successfully",
               });
           }else{
             Swalfire.fire({
@@ -82,9 +89,10 @@ const AddService_Detils = () => {
       }
 
   return (
+    <center>
     <div className='demos'> 
-    <div id="login-popup" className="popup-effect" style={{display:"grid",placeItems:"center",margin:"2em auto",padding:"3em 2em",zIndex:"999",backgroundColor:"white"}}>
-      <center>
+    <div id="login-popup" className="popup-effect">
+     
         <div className="popup" >
         <h4 className="modal-title text-uppercase">Add Service_Category</h4>
         <div className="login-form">
@@ -106,8 +114,8 @@ const AddService_Detils = () => {
               <label htmlFor="recipient-name" className="col-form-label">Service Type </label>
               <select name="Service" className="form-control" onClick={getallist2}
                value={stid} onChange={(e) => setstid(e.target.value)}>
-              {user2.map((data) => (
-                <option value={data._id}>{data.servicetype}</option>
+              {user2.map((data2) => (
+                <option value={data2._id}>{data2.servicetype}</option>
               ))}
               </select>
             </div>
@@ -146,9 +154,9 @@ const AddService_Detils = () => {
         </div>
         <a className="close" href="#"></a>
       </div>
-      </center>
     </div> 
     </div>
+    </center>
   )
 
 }
