@@ -25,10 +25,14 @@ import ShowService_Detils from "./components/Organizer/ShowService_Detils";
 
 import Gallery from "./components/frontend/Gallery";
 import Contact from "./components/frontend/Contact";
+<<<<<<< HEAD
 import Logout from "./components/frontend/Logout";
 import Alogout from "./components/Admin/Alogout";
 import Ologout from "./components/Organizer/Ologout";
 import PackageCreation from "./components/Organizer/PackageCreation";
+=======
+import Detail_Services from "./components/frontend/Detail_Services";
+>>>>>>> 70e1f40197d38282aaf51d2f136b4c16127618a3
 
 const App = () => {
   return (
@@ -46,7 +50,11 @@ const App = () => {
                   <Route path="Error" element={< Error /> } />
                   <Route path="Gallery" element={<Gallery />}/>
                   <Route path="Contact" element={<Contact />}/>
+<<<<<<< HEAD
                
+=======
+                  <Route path="Detail_Services" element={<Detail_Services />}/>
+>>>>>>> 70e1f40197d38282aaf51d2f136b4c16127618a3
                   
 
           </Route>

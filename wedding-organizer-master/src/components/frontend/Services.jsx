@@ -18,6 +18,11 @@ function Services() {
       fetchData();
     });
 
+<<<<<<< HEAD
+=======
+
+const Services = () => {
+>>>>>>> 70e1f40197d38282aaf51d2f136b4c16127618a3
   return (
     <>
     <section class="services py-5">
@@ -32,6 +37,7 @@ function Services() {
                     <Col key={k} xs={12} md={4} lg={3}>
                       <div class="service-grid1">
 					<span class="fa fa-globe"></span>
+<<<<<<< HEAD
 					<h4 class="my-3">{userData.servicecategories}</h4>
 					<p>{userData.description}</p>
 						</div>
@@ -45,6 +51,36 @@ function Services() {
 				
 			
 			
+=======
+					<h4><Link class="my-3" to="/Detail_Services" state={{ from: "occupation" }}>Weddings</Link></h4>
+					<p>Aenean tristique, duiid sedet blandit elt ultricies, ligula elit interd ures turpis, at bibendum lib dolor.</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 mt-sm-0 mt-sm-4 mt-4" >
+				<div class="service-grid1">
+					<span class="fa fa-book"></span>
+					<h4 class="my-3">Parties</h4>
+					<p>Aenean tristique, duiid sedet blandit elt ultricies, ligula elit interd ures turpis, at bibendum lib dolor.</p>				
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 mt-lg-0 mt-sm-4 mt-4">
+				<div class="service-grid1">
+					<span class="fa fa-diamond"></span>
+					<h4 class="my-3">Entertainment</h4>
+					<p>Aenean tristique, duiid sedet blandit elt ultricies, ligula elit interd ures turpis, at bibendum lib dolor.</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 mt-lg-0 mt-sm-4 mt-4">
+				<div class="service-grid1">
+					<span class="fa fa-book"></span>
+					<h4 class="my-3">Celebrations</h4>
+					<p>Aenean tristique, duiid sedet blandit elt ultricies, ligula elit interd ures turpis, at bibendum lib dolor.</p>				
+				</div>
+			</div>
+			<div class="ser-button mt-4">
+				<Link to="services">Explore all services</Link>
+			</div>
+>>>>>>> 70e1f40197d38282aaf51d2f136b4c16127618a3
 		</div>
 		</center>
 	</div>
