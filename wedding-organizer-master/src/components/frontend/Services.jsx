@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const Services = () => {
   return (
     <>
@@ -11,7 +12,7 @@ const Services = () => {
 			<div class="col-lg-3 col-sm-6">
 				<div class="service-grid1">
 					<span class="fa fa-globe"></span>
-					<h4 class="my-3">Weddings</h4>
+					<h4><Link class="my-3" to="/Detail_Services" state={{ from: "occupation" }}>Weddings</Link></h4>
 					<p>Aenean tristique, duiid sedet blandit elt ultricies, ligula elit interd ures turpis, at bibendum lib dolor.</p>
 				</div>
 			</div>

@@ -24,6 +24,7 @@ import AddService_Detils from "./components/Organizer/AddService_Detils";
 import ShowService_Detils from "./components/Organizer/ShowService_Detils";
 import Gallery from "./components/frontend/Gallery";
 import Contact from "./components/frontend/Contact";
+import Detail_Services from "./components/frontend/Detail_Services";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
                   <Route path="Error" element={< Error /> } />
                   <Route path="Gallery" element={<Gallery />}/>
                   <Route path="Contact" element={<Contact />}/>
+                  <Route path="Detail_Services" element={<Detail_Services />}/>
                   
 
           </Route>
