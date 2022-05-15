@@ -14,21 +14,7 @@ const Footer = () => {
             <p><span className="fa fa-envelope-open" /> <a href="mailto:weddingorganizer@gmail.com">weddingorganizer@gmail.com</a></p>
           </address>
         </div>
-        <div className="col-lg-4 col-sm-6 mt-lg-0 mt-sm-0 mt-4 p-md-0">
-          <h3 className="text-capitalize mb-4">Meanwhile On Instagram</h3>
-          <div className="images">
-            <a className="pr-2" href="#"> <img src="images/insta1.jpg" alt className="img-fluid" /> </a>
-            <a className="pr-2" href="#"> <img src="images/insta2.jpg" alt className="img-fluid" /> </a>
-            <a className="pr-2" href="#"> <img src="images/insta3.jpg" alt className="img-fluid" /> </a>
-            <a className="pr-2" href="#"> <img src="images/insta4.jpg" alt className="img-fluid" /> </a>
-            <a className="pr-2" href="#"> <img src="images/insta5.jpg" alt className="img-fluid" /> </a>
-            <a className="mt-2 pr-2" href="#"> <img src="images/insta6.jpg" alt className="img-fluid" /> </a>
-            <a className="mt-2 pr-2" href="#"> <img src="images/insta7.jpg" alt className="img-fluid" /> </a>
-            <a className="mt-2 pr-2" href="#"> <img src="images/insta8.jpg" alt className="img-fluid" /> </a>
-            <a className="mt-2 pr-2" href="#"> <img src="images/insta9.jpg" alt className="img-fluid" /> </a>
-            <a className="mt-2 pr-2" href="#"> <img src="images/insta1.jpg" alt className="img-fluid" /> </a>
-          </div>	
-        </div>
+ 
         <div className="col-lg-3 offset-lg-1 col-sm-6 mt-lg-0 mt-sm-5 mt-4">
           <h3 className="text-capitalize mb-3"> Follow us</h3>
           <p className="mb-4">Follow us on social media</p>

@@ -25,39 +25,14 @@ const Aboutus = () => {
   </section>
   <section className="stats_test">
     <div className="wthree-different-dot1 py-5">
-      <div className="container py-3">
-        <h3 className="heading text-capitalize mb-lg-5 mb-4"> Our Company Facts </h3>
-        <div className="row">
-          <div className="col-12 text-center inner_stat_wthree_agileits">
-            <div className="row px-sm-0 px-3">
-              <div className="col-lg-2 col-sm-4 col-6 stats_left counter_grid">
-                <p className="counter">450</p>
-                <h4>Weddings</h4>
-              </div>
-              <div className="col-lg-2 col-sm-4 col-6 stats_left counter_grid1">
-                <p className="counter">1000</p>
-                <h4>Parties</h4>
-              </div>
-              <div className="col-lg-2 col-sm-4 col-6 stats_left counter_grid2">
-                <p className="counter">145</p>
-                <h4>Events</h4>
-              </div>
-              <div className="col-lg-2 col-sm-4 col-6 stats_left counter_grid3">
-                <p className="counter">986</p>
-                <h4>Registered</h4>
-              </div>
-              <div className="col-lg-2 col-sm-4 col-6 stats_left counter_grid4">
-                <p className="counter">490</p>
-                <h4>Conducted</h4>
-              </div>
-              <div className="col-lg-2 col-sm-4 col-6 stats_left counter_grid5">
-                <p className="counter">560</p>
-                <h4>Happy Clients</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
+        <center>
+        <h3 className="heading text-capitalize mb-lg-5 mb-4"> Dear Customers </h3>
+        <h3 className="mb-3">Never hesitate to contact us for any kind of information</h3>
+              <p><i className="fas fa-mobile-alt" /> +91 9426166882<br></br>  +91 9913004167 </p>
+              
+              </center>
+      
     </div></section>
     </div>
     </>

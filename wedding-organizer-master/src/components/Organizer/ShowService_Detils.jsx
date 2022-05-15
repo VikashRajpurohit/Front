@@ -64,8 +64,6 @@ const ShowService_Detils = () => {
        
       </MDBCardBody>
       <MDBListGroup flush>
-      <MDBListGroupItem><h5>Type  : {data.stid.servicetype}</h5></MDBListGroupItem>
-    
         <MDBListGroupItem style={{height:"40px"}}>Fees : {data.sfees}</MDBListGroupItem>
         <MDBListGroupItem style={{height:"40px"}}>Location  : {data.slocation}</MDBListGroupItem>
          </MDBListGroup>
@@ -76,10 +74,10 @@ const ShowService_Detils = () => {
 
 
 
-       <input type="submit" className="form-control" defaultValue="Save" onClick={() => {
+       <input type="submit" className="form-control" defaultValue="Details" onClick={() => {
             selectuser(data);
           }}
-           value="Save"/>
+           value="Details"/>
        
        </MDBCardBody>
       </center>
@@ -89,21 +87,21 @@ const ShowService_Detils = () => {
 	
 </div>
 
-<Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
+
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{Id._id}</Modal.Title>
+          <Modal.Title>{Id.sname}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>  </Modal.Body>
+        <Modal.Body> 
+        {Id.sdescription.map((data2,k) => (
+            <p>Feature {k+1} :{data2}</p>
+        ))}
+           </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
+          
           <Button variant="primary" onClick={handleClose}>
-            Save Changes
+           Done
           </Button>
         </Modal.Footer>
       </Modal>

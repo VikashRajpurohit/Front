@@ -532,7 +532,7 @@ li > a:only-child:after { content: ''; }
 }
 
 li.breadcrumb-item a {
-    color: #333;
+    color: rgb(59, 57, 57);
     font-weight: 600;
     font-size: 0.95em;
     letter-spacing: 0.5px;
@@ -710,13 +710,12 @@ h4.left-heading{
 
 /*-- services --*/
 .service-grid1 {
-    background: #fff;
-    padding: 1em 0em;
-	text-align: center;
+   	text-align: top;
 }
 .service-grid1 p {
     font-size: 16px;
     color: #888;
+
     line-height: 28px;
 }
 .service-grid1 h4 {
@@ -1297,15 +1296,17 @@ p.para-w3-agile {
 }
 .form input[type="submit"]:hover {
     background: #333;
-	color:#fff;
+    color:#fff;
 }
 .bg-img {
-    background: url(../images/contact.jpg) no-repeat center;
     background-size: cover;
+    height: 200px;
+    width: 300px;
 }
 .contact-layer {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 5em 4em;
+    background: rgba(0, 0, 0, 0.3);
+    
+    
     height: 100%;
 } 
 .bg-img h3 {
@@ -1860,10 +1861,8 @@ address p a:hover {
 		padding: 25vw 0 5vw;
 		font-size: 2em;
 	}
-	.service-grid1 {
-		padding: 1em 0em;
-	}
-	.banner-heading h3 {
+
+		.banner-heading h3 {
 		font-size: 3.2em;
 	}
 	.stats_left h4 {

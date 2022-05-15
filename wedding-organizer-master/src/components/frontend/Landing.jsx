@@ -12,7 +12,7 @@ const Landing = () => {
             Your wedding adventure starts here
           </h3>
         </div>
-        <Link to="Contact"> Plan Your Wedding</Link>
+        <Link to="Registration"> Plan Your Wedding</Link>
       </div>
       {/* To bottom button*/}
       <div className="thim-click-to-bottom">

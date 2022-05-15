@@ -38,7 +38,7 @@ const PackageCreation = () => {
     
           setUser(response.data);
         
-        });}
+        }); }
 
         
         function selectuser(id) {

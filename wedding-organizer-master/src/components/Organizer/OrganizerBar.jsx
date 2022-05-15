@@ -1,6 +1,6 @@
 import react from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBars, FaHome,FaUser,FaUserPlus,FaDatabase,FaSignOutAlt} from "react-icons/fa";
+import { FaBars, FaHome,FaUser,FaUserPlus,FaDatabase,FaSignOutAlt,FaPassport} from "react-icons/fa";
 import { BiSearch } from "react-icons/bi";
 import { AiTwotoneFileExclamation } from "react-icons/ai";
 import { useState } from "react";
@@ -12,23 +12,7 @@ const routes = [
     name: "OrganizerDesk",
     icon: <FaHome />,
   },
-  {
-    path: "Service_Cat",
-    name: "Service_Type",
-    icon: <AiTwotoneFileExclamation />,
-    subRoutes: [
-      {
-        path: "AddService_Cat",
-        name: "Add_Type",
-        icon: <FaUserPlus />,
-      },
-      {
-        path: "Show_Cat",
-        name: "Show_Cat",
-        icon: <FaDatabase />,
-      },
-    ],
-  },
+ 
   {
     path: "Service",
     name: "Service",
@@ -46,19 +30,8 @@ const routes = [
       },
     ],
   },
-  {
-    path: "ShowClient",
-    name: "ShowClient",
-    icon: <FaUser />,
-    subRoutes: [
-      {
-        path: "PackageCreation",
-        name: "PackageCreation ",
-        icon: <FaUserPlus />,
-      },
-     
-    ],
-  },
+ 
+
   {
     path: "Ologout",
     name: "Logout",
@@ -97,6 +70,7 @@ const SideBar = ({ children }) => {
     show: {
       opacity: 1,
       width: "auto",
+     
       transition: {
         duration: 0.5,
       },
